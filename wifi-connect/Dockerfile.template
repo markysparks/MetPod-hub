@@ -1,0 +1,10 @@
+FROM balenablocks/wifi-connect:%%BALENA_ARCH%%
+
+# Copy over customised start shell
+COPY start.sh ./start.sh
+
+ARG PORTAL_SSID
+ARG PORTAL_PASSPHRASE
+
+ENV PORTAL_SSID=${PORTAL_SSID}
+ENV PORTAL_PASSPHRASE=${PORTAL_PASSPHRASE}
